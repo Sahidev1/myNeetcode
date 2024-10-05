@@ -1,4 +1,4 @@
-package valid_anagram.java;
+package Easy_problems.valid_anagram.java;
 
 //Difficulty easy
 public class Solution {

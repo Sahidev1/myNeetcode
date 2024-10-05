@@ -1,3 +1,4 @@
+package Easy_problems.reverse_bits.java;
 
 class Solution {
     public int reverseBits(int n) {
