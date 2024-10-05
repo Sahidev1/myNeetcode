@@ -1,3 +1,5 @@
+package counting_bits.java;
+
 class Solution {
     public int[] countBits(int n) {
         int[] arr = new int[n + 1];
