@@ -1,4 +1,4 @@
-package happy_number.java;
+package Easy_problems.happy_number.java;
 
 import java.util.Set;
 

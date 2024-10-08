@@ -1,3 +1,4 @@
+package Easy_problems.number_of_1_bits.java;
 class Solution {
     public int hammingWeight(int n) {
         return bitCount(n);
