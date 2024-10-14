@@ -29,12 +29,5 @@ public class Solution {
         return head;
     }
 
-    private void iterator(ListNode root){
-        System.out.print("[");
-        while(root != null){
-            System.out.print(root.val+", ");
-            root = root.next;
-        }
-        System.out.println("]");
-    }
+    
 }
