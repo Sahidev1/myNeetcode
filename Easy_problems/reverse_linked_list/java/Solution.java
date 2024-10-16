@@ -7,7 +7,7 @@ public class Solution {
         public ListNode next;
         public ListNode() {}    ListNode(int val) { this.val = val; }
         public ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-      }
+    }
 
     public ListNode reverseList(ListNode head) {
         ListNode curr = head;
