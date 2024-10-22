@@ -1,4 +1,6 @@
-package Easy_problems.utils.java;
+package utils.java;
+
+
 
 
 
