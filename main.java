@@ -5,7 +5,7 @@ class Main {
     public static void main(String[] args) {
         Solution sol = new Solution();
 
-        TreeNode tree = createRandomBalancedTree(new TreeNode(),100000);
+        TreeNode tree = createRandomBalancedTree(new TreeNode(),1000000);
 
         long start = System.currentTimeMillis();
         System.out.println(sol.isBalanced(tree));
