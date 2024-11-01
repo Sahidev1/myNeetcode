@@ -8,7 +8,7 @@ class Solution:
         if n <= 3: return n
         remember = self.mem.get(n)
         if remember != None: return remember
-        climb2 = self.climbStairs(n - 2)
-        climb1 = self.climbStairs(n - 1)
+        climb2 = self.climb(n - 2)
+        climb1 = self.climb(n - 1)
         self.mem[n] = climb1 + climb2
         return climb1 + climb2
