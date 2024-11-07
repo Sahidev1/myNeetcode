@@ -18,9 +18,9 @@ public class KthLargest {
 
         public HeapTree(ORDERING ord){
             this.order = ord;
-            this.treeSize = 2;
+            this.treeSize = 2<<3;
             this.lastFree = 1;
-            this.maxD = 1;
+            this.maxD = 4;
             generateTree();
         }
 
@@ -28,8 +28,8 @@ public class KthLargest {
             this.order = ord;
             int initLen = initArr.length;
             this.lastFree = 1;
-            int treeSize = 2;
-            int maxD = 1;
+            int treeSize = 2<<3;
+            int maxD = 4;
             while(treeSize < initLen) {
                 treeSize <<= 1;
                 maxD++;
@@ -47,6 +47,10 @@ public class KthLargest {
             if(this.lastFree >= arr.length) enlargeTreeArray();
             this.arr[this.lastFree++] = v;
             bottom_swim_heapify();
+        }
+
+        public Integer peek(){
+            return this.arr[1];
         }
 
         public Integer remove(){
@@ -70,36 +74,13 @@ public class KthLargest {
             return sorted;
         }
 
-        public int kthOrderedVal(int k) throws Exception{
-            if (k >= this.lastFree) throw new Exception("attempting to access nonexistant node");
-            int rems = 0;
-            int[] save = new int[k];
-
-            Integer remed;
-            while(rems < k){
-                remed = this.remove();
-                if (remed != null){
-                     save[rems++] = remed;
-
-                    }
-            }
-
-
-
-            int kth = save[k - 1];
-            for (int i = k-1; i >= 0; i--){
-                this.insert(save[i]);
-            }
-
-            return kth;
-        }
 
         public int getTreeDepth(){
             return this.maxD;
         }
 
         public int getSize(){
-            return this.lastFree;
+            return this.lastFree - 1;
         }
 
         public void printHeap(){
@@ -146,13 +127,13 @@ public class KthLargest {
         }
 
         private void sink_heapify(int curr){
-            if ((2*curr + 1) >= this.lastFree || arr[curr] == null) return;
+            if ((2*curr + 1) > this.lastFree) return;
             Integer lchild = arr[2*curr];
             Integer rchild = arr[2*curr + 1];
             if (lchild == null && rchild == null) return;
             if(this.order == ORDERING.MIN){
                 int smallestIndex = curr;         
-                if (lchild == null ^ rchild == null) {
+                if (lchild == null || rchild == null) {
                     smallestIndex = lchild == null?2*curr + 1:2*curr;
                 } else {
                     smallestIndex = lchild < rchild?2*curr:2*curr + 1;
@@ -163,7 +144,7 @@ public class KthLargest {
                 } else return;
             } else {
                 int largestIndex = curr;
-                if (lchild == null ^ rchild == null) {
+                if (lchild == null || rchild == null) {
                     largestIndex = lchild == null?2*curr + 1:2*curr;
                 } else {
                     largestIndex = lchild > rchild?2*curr:2*curr + 1;
@@ -197,19 +178,32 @@ public class KthLargest {
     }
 
     private int k;
-    private HeapTree maxPQ;
+    private HeapTree minPQ;
 
-    public KthLargest(int k, int[] nums) {
+    public KthLargest(int k, int[] nums)  {
         this.k = k;
-        this.maxPQ = new HeapTree(ORDERING.MAX, nums);
+        this.minPQ = new HeapTree(ORDERING.MIN);
+        for (int i : nums) {
+            this.add(i);   
+        }
     }
     
-    public int add(int val) throws Exception {
-        this.maxPQ.insert(val);
-        return this.maxPQ.kthOrderedVal(this.k);
+    public int add(int val)  {
+        int size = this.minPQ.getSize();
+        Integer rootVal = this.minPQ.peek();
+        if (rootVal == null || size < this.k){
+            this.minPQ.insert(val);
+        } 
+        else {
+            if (val > rootVal){
+                this.minPQ.remove();
+                this.minPQ.insert(val);
+            }
+        }
+        return this.minPQ.peek();
     }
 
     public HeapTree getHeapTree(){
-        return this.maxPQ;
+        return this.minPQ;
     }
 }

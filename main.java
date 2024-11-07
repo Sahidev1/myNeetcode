@@ -5,31 +5,27 @@ import Easy_problems.kth_largest_element_in_a_Stream.java.KthLargest.ORDERING;
 class Main {
     public static void main(String[] args) throws Exception {
 
-        KthLargest sol = new KthLargest(3, new int[]{1000,-1000});
-
-        System.out.println(sol.add(0));
-        // generate integer array of size 1000 with random values
-        /*int[] arr = new int[100];
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = (int) ((Math.random()-0.5) * 1000);
-        }
-
-        HeapTree ht = new HeapTree(ORDERING.MAX, arr);
-        ht.printHeap();
-        ht.insert(3);
+       /* uSE THIS TEST CASE: 
+        * ["KthLargest","add","add","add","add","add"]
+            [[3,[5,-1]],[2],[1],[-1],[3],[4]]
+        */
+        int[] arr = {5, -1};
+        KthLargest kthLargest = new KthLargest(3, arr);
+        HeapTree ht = kthLargest.getHeapTree();
+        ht.insert(2);
         ht.insert(1);
-        int k = 1 + (int) (Math.random() * 100);
-        int kth = ht.kthOrderedVal(k);
         ht.printHeap();
-        System.out.println("kth: " + kth);
-        System.out.println("k: " + k);
-        int[] sorted = ht.heapSort();
-        for (int i = 0; i < sorted.length; i++) {
-            if (i == k){
-                System.out.print("[" + sorted[i] + "], ");
-            } else {
-                System.out.print(sorted[i] + ", ");
-            }
-        }*/
+        for (int i = 0; i < 4; i++) {
+            System.out.println(ht.remove());
+            ht.printHeap();
+        }
+        /*System.out.println(kthLargest.add(2));   // returns 2
+        System.out.println(kthLargest.add(1));   // returns 1
+        kthLargest.getHeapTree().printHeap();
+        System.out.println(kthLargest.getHeapTree().kthOrderedVal(3));
+        /*System.out.println(kthLargest.add(-1));  // returns 1
+        System.out.println(kthLargest.add(3));   // returns 2
+        System.out.println(kthLargest.add(4));   // returns 3
+*/
     }
 }
