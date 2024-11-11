@@ -1,4 +1,4 @@
-package Easy_problems.last_stone_height.java;
+package Easy_problems.last_stone_weight.java;
 
 import java.util.Collections;
 //import priority queue lib 

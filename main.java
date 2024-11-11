@@ -1,5 +1,5 @@
 
-import Easy_problems.last_stone_height.java.Solution;
+import Easy_problems.last_stone_weight.java.Solution;
 
 class Main {
     public static void main(String[] args) throws Exception {
