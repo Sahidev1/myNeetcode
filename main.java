@@ -1,16 +1,15 @@
 
-import Medium_problems.min_stack.java.MinStack;
+import Medium_problems.implement_trie.java.Trie;
 
 class Main {
     public static void main(String[] args) throws Exception {
 
-        MinStack minStack = new MinStack();
-        minStack.push(1);
-        minStack.push(2);
-        minStack.push(0);
-        minStack.getMin(); // return 0
-        minStack.pop();
-        minStack.top(); // return 2
-        minStack.getMin(); // return 1
+        Trie prefixTree = new Trie();
+        prefixTree.insert("dog");
+        System.out.println(prefixTree.search("dog")); // return true
+        System.out.println(prefixTree.search("do")); // return false
+        System.out.println(prefixTree.startsWith("do")); // return true
+        prefixTree.insert("do");
+        System.out.println(prefixTree.search("do")); // return true
     }
 }
