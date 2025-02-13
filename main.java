@@ -1,15 +1,24 @@
 
-import Medium_problems.implement_trie.java.Trie;
+import java.util.List;
+
+import Medium_problems.Subsets.java.Solution; 
 
 class Main {
     public static void main(String[] args) throws Exception {
+        Solution sol = new Solution();
+        int[] nums = {1,2,3};
 
-        Trie prefixTree = new Trie();
-        prefixTree.insert("dog");
-        System.out.println(prefixTree.search("dog")); // return true
-        System.out.println(prefixTree.search("do")); // return false
-        System.out.println(prefixTree.startsWith("do")); // return true
-        prefixTree.insert("do");
-        System.out.println(prefixTree.search("do")); // return true
+        List<List<Integer>> res = sol.subsets(nums);
+
+        System.out.println("starting with size: " + res.size());
+
+        for (List<Integer> list : res) {
+            System.out.print("[");
+            for ( int i : list) {
+                System.out.print(i + ",");
+            }
+            System.out.println("]");
+        }
+
     }
 }
