@@ -1,24 +1,27 @@
 
 import java.util.List;
 
-import Medium_problems.Subsets.java.Solution; 
+import Medium_problems.k_closest_points_to_origin.java.Solution;
 
 class Main {
+
+
     public static void main(String[] args) throws Exception {
+        int[][] points = {{0,2},{2,0}, {2,2}};
+        int k = 2;
+
+        pointArrayPrinter(points);
+
         Solution sol = new Solution();
-        int[] nums = {1,2,3};
 
-        List<List<Integer>> res = sol.subsets(nums);
+        int[][] kth_closest = sol.kClosest(points, k);
+        System.out.println("kth:");
+        pointArrayPrinter(kth_closest);
+    }
 
-        System.out.println("starting with size: " + res.size());
-
-        for (List<Integer> list : res) {
-            System.out.print("[");
-            for ( int i : list) {
-                System.out.print(i + ",");
-            }
-            System.out.println("]");
+    private static void pointArrayPrinter(int[][] points){
+        for (int[] p: points){
+            System.out.println("[" + p[0] + "," + p[1] + "]");
         }
-
     }
 }
