@@ -5,7 +5,7 @@ Stats so far:
 
   &emsp;Easy problems: 28/28 solved
   
-  &emsp;Medium problems: 10/101 solved
+  &emsp;Medium problems: 18/101 solved
 
 neetcode link: https://neetcode.io/
 
