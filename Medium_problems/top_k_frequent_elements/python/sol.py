@@ -1,34 +1,62 @@
 
+import math
 
-    
 
-import heapq
+def bucketIt(map:dict, bucketCount:int, maxcount:int)->list[int]:
+    k = bucketCount
+    buckets = [[] for i in range(0,k)]
+    M = maxcount + 1
+
+    keys = map.keys()
+    for elem in keys:
+        buckets[math.floor((map[elem]*k)/M)].append(elem)
+
+    return buckets
+
+
 
 
 class Solution:
     def topKFrequent(self, nums: list[int], k: int) -> list[int]:
-        map:dict[int, int] = {}
+        map:dict[int,int] = {}
 
-        for i in range(len(nums)):
-            elem = nums[i]
+        maxCount = 0
+
+        for elem in nums:
             if elem not in map:
                 map[elem] = 1
             else:
-                map[elem] += 1
-        
-        data = [(-val, key) for key, val in map.items()]
+                map[elem] +=1
+            if map[elem] > maxCount: maxCount = map[elem]
 
-        heapq.heapify(data)
+        buckets = bucketIt( map, len(nums), maxCount)
         result = []
-
-        for i in range(0,k):
-            result.append(heapq.heappop(data)[1])
-
-
+        buckIndex = len(nums) - 1
+        
+        while k > 0:
+            if buckIndex < 0: break
+            elif len(buckets[buckIndex]) == 0:
+                buckIndex -= 1
+                continue
+            else:
+                if (k >= len(buckets[buckIndex])):
+                    for elem in buckets[buckIndex]: 
+                        result.append(elem)
+                        k -= 1
+                else: 
+                    buckets[buckIndex].sort()
+                    while k > 0:
+                        result.append(buckets[buckIndex].pop())
+                        k -= 1
+                buckIndex -= 1
+                    
         return result
+        
+
         
 
 list=[2,2,3,5,7,7,2,5,6,7,5,5,9]
 
 sol = Solution()
-sol.topKFrequent(list, 3)        
+res=sol.topKFrequent(list, 3)        
+print(res)
