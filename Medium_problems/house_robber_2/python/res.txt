@@ -1,0 +1,209 @@
+0 True
+1 True
+2 True
+3 True
+4 True
+5 True
+6 True
+7 True
+8 True
+9 True
+10 True
+11 True
+12 True
+13 True
+14 True
+15 True
+16 True
+17 True
+18 True
+19 True
+20 True
+21 True
+22 True
+23 True
+24 True
+25 True
+26 True
+27 True
+28 True
+29 True
+30 True
+31 True
+32 True
+33 True
+34 True
+35 True
+36 True
+37 True
+38 True
+39 True
+40 True
+41 True
+42 True
+43 True
+44 True
+45 True
+46 True
+47 True
+48 True
+49 True
+50 True
+51 True
+52 True
+53 True
+54 True
+55 True
+56 True
+57 True
+58 True
+59 True
+60 True
+61 True
+62 True
+63 True
+64 True
+65 True
+66 True
+67 True
+68 True
+69 True
+70 True
+71 True
+72 True
+73 True
+74 True
+75 True
+76 True
+77 True
+78 True
+79 True
+80 True
+81 True
+82 True
+83 True
+84 True
+85 True
+86 True
+87 True
+88 True
+89 True
+90 True
+91 True
+92 True
+93 True
+94 True
+95 True
+96 True
+97 True
+98 True
+99 True
+100 True
+DEADEND:  100
+101 True
+DEADEND:  101
+RES:  101 100
+100 True
+DEADEND:  100
+RES:  100 99
+RES:  99 98
+RES:  98 97
+RES:  97 96
+RES:  96 95
+RES:  95 94
+RES:  94 93
+RES:  93 92
+RES:  92 91
+RES:  91 90
+RES:  90 89
+RES:  89 88
+RES:  88 87
+RES:  87 86
+RES:  86 85
+RES:  85 84
+RES:  84 83
+RES:  83 82
+RES:  82 81
+RES:  81 80
+RES:  80 79
+RES:  79 78
+RES:  78 77
+RES:  77 76
+RES:  76 75
+RES:  75 74
+RES:  74 73
+RES:  73 72
+RES:  72 71
+RES:  71 70
+RES:  70 69
+RES:  69 68
+RES:  68 67
+RES:  67 66
+RES:  66 65
+RES:  65 64
+RES:  64 63
+RES:  63 62
+RES:  62 61
+RES:  61 60
+RES:  60 59
+RES:  59 58
+RES:  58 57
+RES:  57 56
+RES:  56 55
+RES:  55 54
+RES:  54 53
+RES:  53 52
+RES:  52 51
+RES:  51 50
+RES:  50 49
+RES:  49 48
+RES:  48 47
+RES:  47 46
+RES:  46 45
+RES:  45 44
+RES:  44 43
+RES:  43 42
+RES:  42 41
+RES:  41 40
+RES:  40 39
+RES:  39 38
+RES:  38 37
+RES:  37 36
+RES:  36 35
+RES:  35 34
+RES:  34 33
+RES:  33 32
+RES:  32 31
+RES:  31 30
+RES:  30 29
+RES:  29 28
+RES:  28 27
+RES:  27 26
+RES:  26 25
+RES:  25 24
+RES:  24 23
+RES:  23 22
+RES:  22 21
+RES:  21 20
+RES:  20 19
+RES:  19 18
+RES:  18 17
+RES:  17 16
+RES:  16 15
+RES:  15 14
+RES:  14 13
+RES:  13 12
+RES:  12 11
+RES:  11 10
+RES:  10 9
+RES:  9 8
+RES:  8 7
+RES:  7 6
+RES:  6 5
+RES:  5 4
+RES:  4 3
+RES:  3 2
+RES:  2 1
+0 False
+DEADEND:  0
+2539
